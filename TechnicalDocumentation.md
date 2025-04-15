@@ -43,6 +43,7 @@ src/
   listId: String,       // Parent list identifier
   onEdit: Function     // Edit handler
 }
+```
 
 #### 2. DroppableList
 **Purpose**: Container that accepts draggable fields.
@@ -60,6 +61,7 @@ src/
   onMove: Function,     // Move handler
   onEdit: Function     // Edit handler
 }
+```
 
 #### 3. EditModal
 **Purpose**: Modal interface for editing field properties.
@@ -82,6 +84,7 @@ Key Features:
     editingField: Object // Currently edited field
   }
 }
+```
 
 ### Actions
 1. `moveField`: Moves a field between tabs
@@ -99,7 +102,7 @@ Key Features:
   checked?: Boolean,    // For checkbox type
   value?: String       // Field value
 }
-
+```
 
 ### Styling
 - Each component has its own CSS module
