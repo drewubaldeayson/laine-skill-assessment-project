@@ -5,6 +5,16 @@ import './DraggableField.css';
 const DraggableField = ({ field, index, listId, onEdit, onReorder }) => {
   const ref = useRef(null);
 
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData('application/json', JSON.stringify({
+      field,
+      index,
+      listId,
+      sourceWindow: window.name || 'window1' // Identify source window
+    }));
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
   const [{ isDragging }, drag] = useDrag({
     type: 'field',
     item: { index, id: field.id, listId },
@@ -24,15 +34,11 @@ const DraggableField = ({ field, index, listId, onEdit, onReorder }) => {
       if (dragIndex === hoverIndex && dragItem.listId === listId) return;
 
       const hoverBoundingRect = ref.current.getBoundingClientRect();
-      
       const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
-  
       const clientOffset = monitor.getClientOffset();
-      
       const hoverClientY = clientOffset.y - hoverBoundingRect.top;
 
       if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) return;
-      
       if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) return;
 
       if (dragItem.listId === listId) {
@@ -47,6 +53,8 @@ const DraggableField = ({ field, index, listId, onEdit, onReorder }) => {
   return (
     <div
       ref={ref}
+      draggable="true"
+      onDragStart={handleDragStart}
       className={`field-item ${isDragging ? 'dragging' : ''}`}
       onClick={() => onEdit(field)}
     >

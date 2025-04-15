@@ -37,8 +37,19 @@ const fieldsSlice = createSlice({
       });
       state.editingField = null;
     },
+    setAllFields: (state, action) => {
+      state.tab1 = action.payload.tab1;
+      state.tab2 = action.payload.tab2;
+    },
   },
 });
 
-export const { moveField, reorderFields, setEditingField, updateField } = fieldsSlice.actions;
+export const {
+  moveField,
+  reorderFields,
+  setEditingField,
+  updateField,
+  setAllFields
+} = fieldsSlice.actions;
+
 export default fieldsSlice.reducer;
