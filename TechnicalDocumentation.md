@@ -20,7 +20,7 @@ src/
 │   └── fieldsSlice.js      # Redux state management
 ├── App.js                  # Main application component
 └── index.js               # Application entry point
-
+```
 
 ## Components Technical Documentation
 
