@@ -21,7 +21,7 @@ Before you begin, ensure you have installed:
 
 1. Clone the repository:
 ```bash
-git clone [<repository-url>](https://github.com/drewubaldeayson/laine-skill-assessment-project.git)
+git clone https://github.com/drewubaldeayson/laine-skill-assessment-project.git
 cd laine-skill-assessment-project
 ```
 
