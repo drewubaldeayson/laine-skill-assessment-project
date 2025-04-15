@@ -1,7 +1,7 @@
 # Drag and Drop UI - Technical Documentation for Laine Neural Network Assessment
 
 ## Overview
-This application is a React-based admin interface that implements drag-and-drop functionality for managing form fields across different tabs. It allows users to reorder fields, move them between tabs, and edit their properties.
+This application is a React-based admin interface that implements drag-and-drop functionality for managing form fields across different tabs and windows. It allows users to reorder fields, move them between tabs and windows, and edit their properties.
 
 ## Technical Stack
 - **React**: Frontend library for building user interfaces
