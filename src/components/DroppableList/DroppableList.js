@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd';
 import DraggableField from '../DraggableField/DraggableField';
 import './DroppableList.css';
 
-const DroppableList = ({ listId, fields, onMove, onEdit }) => {
+const DroppableList = ({ listId, fields, onMove, onEdit, onReorder }) => {
   const [{ isOver }, drop] = useDrop({
     accept: 'field',
     drop: (item) => {
@@ -25,6 +25,7 @@ const DroppableList = ({ listId, fields, onMove, onEdit }) => {
           index={index}
           listId={listId}
           onEdit={onEdit}
+          onReorder={onReorder}
         />
       ))}
     </div>

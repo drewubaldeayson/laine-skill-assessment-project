@@ -4,15 +4,16 @@
     margin: 8px 0;
     border-radius: 4px;
     cursor: move;
+    transition: transform 0.2s ease;
     border: 1px solid #ddd;
-    transition: all 0.2s ease;
+    user-select: none;
 }
 
 .field-item:hover {
     background-color: #e0e0e0;
-    transform: translateY(-2px);
 }
 
 .field-item.dragging {
     opacity: 0.5;
+    background-color: #e8e8e8;
 }

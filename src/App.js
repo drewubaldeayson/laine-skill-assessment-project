@@ -4,7 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDispatch, useSelector } from 'react-redux';
 import DroppableList from './components/DroppableList/DroppableList';
 import EditModal from './components/EditModal/EditModal';
-import { moveField, setEditingField, updateField } from './store/fieldsSlice';
+import { moveField, reorderFields, setEditingField, updateField } from './store/fieldsSlice';
 import './App.css';
 
 function App() {
@@ -13,6 +13,10 @@ function App() {
 
   const handleMove = (fromList, toList, dragIndex) => {
     dispatch(moveField({ fromList, toList, dragIndex }));
+  };
+
+  const handleReorder = (listId, dragIndex, hoverIndex) => {
+    dispatch(reorderFields({ listId, dragIndex, hoverIndex }));
   };
 
   const handleEdit = (field) => {
@@ -33,6 +37,7 @@ function App() {
               listId="tab1"
               fields={tab1}
               onMove={handleMove}
+              onReorder={handleReorder}
               onEdit={handleEdit}
             />
           </div>
@@ -42,6 +47,7 @@ function App() {
               listId="tab2"
               fields={tab2}
               onMove={handleMove}
+              onReorder={handleReorder}
               onEdit={handleEdit}
             />
           </div>

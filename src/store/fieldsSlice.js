@@ -19,6 +19,12 @@ const fieldsSlice = createSlice({
       const [movedItem] = state[fromList].splice(dragIndex, 1);
       state[toList].push(movedItem);
     },
+    reorderFields: (state, action) => {
+      const { listId, dragIndex, hoverIndex } = action.payload;
+      const list = state[listId];
+      const [removed] = list.splice(dragIndex, 1);
+      list.splice(hoverIndex, 0, removed);
+    },
     setEditingField: (state, action) => {
       state.editingField = action.payload;
     },
@@ -34,5 +40,5 @@ const fieldsSlice = createSlice({
   },
 });
 
-export const { moveField, setEditingField, updateField } = fieldsSlice.actions;
+export const { moveField, reorderFields, setEditingField, updateField } = fieldsSlice.actions;
 export default fieldsSlice.reducer;
