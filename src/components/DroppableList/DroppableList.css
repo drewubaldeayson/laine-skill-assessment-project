@@ -1,0 +1,13 @@
+.drop-area {
+    min-height: 200px;
+    border: 2px dashed #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.drop-area.active {
+    border-color: #2196f3;
+    background-color: rgba(33, 150, 243, 0.05);
+}

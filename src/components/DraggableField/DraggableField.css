@@ -1,0 +1,18 @@
+.field-item {
+    background-color: #f0f0f0;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: move;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.field-item:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.field-item.dragging {
+    opacity: 0.5;
+}

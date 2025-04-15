@@ -1,0 +1,25 @@
+.app {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs-container {
+    display: flex;
+    gap: 24px;
+}
+
+.tab {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab h2 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 1.25rem;
+}
